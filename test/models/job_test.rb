@@ -2,7 +2,17 @@ require 'test_helper'
 
 class JobTest < ActiveSupport::TestCase
   test "name should be present" do
-    job = Job.new 
+    job = Job.new(job_type: 0)
     assert_not job.valid?
+  end
+
+  test "job type should be present" do
+    job = Job.new(name: 'job')
+    assert_not job.valid?
+  end
+
+  test "job is valid" do
+    job = Job.new(name: 'job', job_type: :intern)
+    assert job.valid?
   end
 end

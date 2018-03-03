@@ -2,8 +2,13 @@
 
 <div class="jobs_wrapper">
   <% @jobs.each do |j| %>
-    <div class="job_wrapper">
-      <%= j.name %>
+    <div class="job_wrapper" id="job_<%= j.id %>">
+      <div class="name">
+        <%= j.name %>
+      </div>
+      <div class="type">
+        <%= j.job_type %>
+      </div>
     </div>
   <% end %>
 </div>
