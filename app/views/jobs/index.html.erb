@@ -1,0 +1,9 @@
+<h1>Jobs</h1>
+
+<div class="jobs_wrapper">
+  <% @jobs.each do |j| %>
+    <div class="job_wrapper">
+      <%= j.name %>
+    </div>
+  <% end %>
+</div>
