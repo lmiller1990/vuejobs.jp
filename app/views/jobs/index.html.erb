@@ -1,14 +1,22 @@
-<h1>Jobs</h1>
-
 <div class="jobs_wrapper">
+  <h1>Jobs</h1>
   <% @jobs.each do |j| %>
-    <div class="job_wrapper" id="job_<%= j.id %>">
-      <div class="name">
-        <%= j.name %>
+    <a href="/jobs/<%= j.id %>" class="job_wrapper" id="job_<%= j.id %>">
+      <div class="job_type">
+        <div>
+          <%= j.job_type %>
+        </div>
       </div>
-      <div class="type">
-        <%= j.job_type %>
+      <div class="job_body">
+        <div>
+          <img class="company-image" src="http://via.placeholder.com/50x50">
+        </div>
+        <div class="job_details">
+          <div class="name"><%= j.name %></div>
+          <div class="company">at <%= j.company %></div>
+          <div class="description"><%= j.description.truncate 250 %></div>
+        </div>
       </div>
-    </div>
+    </a>
   <% end %>
 </div>

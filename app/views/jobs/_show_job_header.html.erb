@@ -1,0 +1,25 @@
+<div class="show_job_header">
+  <img class="show_job_company_image" src="http://via.placeholder.com/400x400">
+  <div class="show_job_name_company">
+    <div class="show_job_name"><%= @job.name %></div>
+    <div class="show_job_at"> at <%= @job.company %></div>
+  </div>
+</div>
+
+<style>
+.show_job_header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border: 1px solid red;
+  height: 100px;
+}
+
+.show_job_name {
+  font-size: 22pt;
+}
+
+.show_job_company_image {
+  height: 100%;
+}
+</style>

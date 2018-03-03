@@ -1,9 +1,13 @@
-<div class="job_container">
-  <div class="job_name">
-    <%= @job.name %> 
-  </div>
-  <div class="job_type">
-    <%= @job.job_type %>
-  </div>
+<div class="show_job_container">
+  <%= render partial: 'show_job_header' %>
+  <%= render partial: 'show_job_details_banner' %>
+  <%= render partial: 'show_job_description' %>
 </div>
+
+<style>
+.show_job_container {
+  width: 100%;
+}
+</style>
+
 

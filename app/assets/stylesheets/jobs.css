@@ -1,0 +1,44 @@
+.jobs_wrapper {
+  max-width: 800px;
+  width: 100%;
+}
+
+.job_wrapper {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid silver;
+  border-radius: 3px;
+}
+
+.job_type {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.job_type > div {
+  padding: 5px;
+  background-color: gold;
+}
+
+.job_details {
+  margin-right: 20px;
+}
+
+.name {
+  font-size: 14pt;
+}
+
+.company {
+  padding-left: 15px;
+  margin-bottom: 10px;
+}
+
+.job_body {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.company-image {
+  margin: 0 10px;
+}

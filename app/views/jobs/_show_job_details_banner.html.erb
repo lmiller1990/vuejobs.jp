@@ -1,0 +1,36 @@
+<div class="show_job_details_banner">
+  <div class="details_inner">
+    <div class="details_location">
+      <div class="bold">Location</div>
+      <div>Tokyo</div>
+    </div>
+    <div class="details_type">
+      <div class="bold">Job type</div>
+      <div><%= @job.job_type %></div>
+    </div>
+    <div class="salary">
+      <div class="bold">Salary</div>
+      <div>$100</div>
+    </div>
+    <div class="posted">
+      <div class="bold">Posted</div>
+      <div><%= @job.created_at %></div>
+    </div>
+  </div>
+</div>
+
+<style>
+.show_job_details_banner {
+  background-color: rgba(211, 211, 211, 0.5);
+  padding: 0 50px;
+  display: flex;
+}
+
+.details_inner {
+  display: flex;
+}
+
+.details_inner > div {
+  margin-right: 20px;
+}
+</style>
