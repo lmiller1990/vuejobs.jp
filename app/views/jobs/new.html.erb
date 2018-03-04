@@ -1,7 +1,15 @@
-<%= form_with(model: Job.new) do |form| %>
+<%= javascript_pack_tag 'job_new' %>
+
+<%= form_with(model: Job.new, id: 'job_form') do |form| %>
   <%= form.label :name %>
+
   <%= form.text_field :name %>
-  <%= form.text_field :description %>
+
+  <%= content_tag :div, '', id: 'job_description', name: 'job[description]' %>
+
+  <%= form.hidden_field :description, id: 'job_description_hidden' %>
+
   <%= select(:job, :job_type, Job.job_types.collect { |t| [ t[0], t[0] ] }) %>
-  <%= form.submit %>
+
+  <%= form.submit :onclick => "newFormSubmitted(event)" %>
 <% end %>

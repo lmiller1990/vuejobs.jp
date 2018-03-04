@@ -10,7 +10,7 @@ class ArticlesTest < ApplicationSystemTestCase
     assert_difference 'Job.count', 1 do
       visit new_job_path
       fill_in 'job[name]', with: 'developer'
-      fill_in 'job[description]', with: '<div>do some work</div>'
+      find('.pell-content').set('<div>Some rich content</div>')
       select 'contract', from: 'job_job_type'
       click_on 'Create Job'
       assert_selector '.show_job_name', :count => 1

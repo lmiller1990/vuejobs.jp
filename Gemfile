@@ -6,6 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 
+gem 'webpacker', '~> 3.3'
+
 gem 'rails-controller-testing'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
