@@ -6,7 +6,8 @@ class CreatesAJobTest < ActionDispatch::IntegrationTest
       post jobs_path, params: {
         job: {
           name: 'programmer',
-          job_type: :intern
+          job_type: :intern,
+          description: '<ol><li>Details</li></ol>'
         }
       }
     end
@@ -18,6 +19,5 @@ class CreatesAJobTest < ActionDispatch::IntegrationTest
     get jobs_path
     assert_template 'jobs/index'
     assert_select '.job_wrapper', count: 2
-    assert_select "#job_#{Job.first.id} > .type", text: Job.first.job_type
   end
 end

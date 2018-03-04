@@ -3,7 +3,9 @@
 one:
   name: 'vue developer'
   job_type: 'intern'
+  description: '<div>Description</div>'
 
 two:
   name: 'react developer'
   job_type: 'fulltime'
+  description: '<div>Description</div>'

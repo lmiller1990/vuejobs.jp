@@ -1,7 +1,7 @@
 <%= form_with(model: Job.new) do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name %>
-  <%= select(:job, :job_type, Job.job_types.collect { |t| [ t[0], t[1] ] }) %>
-
+  <%= form.text_field :description %>
+  <%= select(:job, :job_type, Job.job_types.collect { |t| [ t[0], t[0] ] }) %>
   <%= form.submit %>
 <% end %>
