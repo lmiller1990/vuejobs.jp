@@ -1,19 +1,50 @@
 <%= javascript_pack_tag 'job_new' %>
 
-<%= form_with(model: Job.new, id: 'job_form') do |form| %>
-  <%= form.label :name %>
+<%= form_with(model: Job.new, id: 'job_form', class: 'new_job_form') do |form| %>
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :name %>
+  </div>
 
-  <%= form.text_field :name %>
+  <div class="field">
+    <%= form.label :company_description %>
+    <div class="divider"></div>
+    <%= content_tag :div, '', id: 'company_description', name: 'job[company_description]' %>
+  </div>
 
-  <%= content_tag :div, '', id: 'job_description', name: 'job[description]' %>
-
-  <%= content_tag :div, '', id: 'company_description', name: 'job[company_description]' %>
+  <div class="underlined field">
+    <%= form.label :job_description %>
+    <div class="divider"></div>
+    <%= content_tag :div, '', id: 'job_description', name: 'job[description]' %>
+  </div>
 
   <%= form.hidden_field :description, id: 'job_description_hidden' %>
 
   <%= form.hidden_field :company_description, id: 'company_description_hidden' %>
 
-  <%= select(:job, :job_type, Job.job_types.collect { |t| [ t[0], t[0] ] }) %>
+  <div class="field">
+    <%= form.label :job_type %>
+    <%= select(:job, :job_type, Job.job_types.collect { |t| [ t[0], t[0] ] }) %>
+  </div>
 
   <%= form.submit :onclick => "newFormSubmitted(event)" %>
 <% end %>
+
+<style>
+.new_job_form {
+  width: 80%;
+}
+
+.pell-content {
+  border: 1px solid silver;
+  min-height: 200px;
+  padding: 5px;
+  margin: 5px 0;
+}
+
+.pell-button {
+  border: none;
+  height: 25px;
+  width: 25px;
+}
+</style>

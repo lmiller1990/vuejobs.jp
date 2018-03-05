@@ -10,7 +10,24 @@ document.addEventListener('DOMContentLoaded', () => {
   form = document.querySelector('#job_form')
 
   const initEditor = id => pell.init({
-    element: document.getElementById(id)
+    element: document.getElementById(id),
+    onChange: html => {},
+    actions: [
+      'bold', 
+      'italic', 
+      'underline',
+      'link',
+      {
+        icon: '&#35;',
+        title: 'Ordered List',
+        result: () => document.execCommand('insertOrderedList')
+      },
+      {
+        icon: '&#35;',
+        title: 'Unordered List',
+        result: () => document.execCommand('insertUnorderedList')
+      }
+    ]
   })
 
   richEditors.forEach(x => x.editor = initEditor(x.id))
