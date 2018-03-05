@@ -7,7 +7,11 @@
 
   <%= content_tag :div, '', id: 'job_description', name: 'job[description]' %>
 
+  <%= content_tag :div, '', id: 'company_description', name: 'job[company_description]' %>
+
   <%= form.hidden_field :description, id: 'job_description_hidden' %>
+
+  <%= form.hidden_field :company_description, id: 'company_description_hidden' %>
 
   <%= select(:job, :job_type, Job.job_types.collect { |t| [ t[0], t[0] ] }) %>
 

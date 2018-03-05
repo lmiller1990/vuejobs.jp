@@ -7,7 +7,8 @@ class CreatesAJobTest < ActionDispatch::IntegrationTest
         job: {
           name: 'programmer',
           job_type: :intern,
-          description: '<ol><li>Details</li></ol>'
+          description: '<ol><li>Details</li></ol>',
+          company_description: '<div>Great company</div>'
         }
       }
     end

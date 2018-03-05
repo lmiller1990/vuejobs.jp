@@ -1,6 +1,8 @@
 <div class="show_job_header">
-  <img class="show_job_company_image" src="http://via.placeholder.com/400x400">
-  <div class="show_job_name_company">
+  <div class="image_wrapper">
+    <img class="show_job_company_image" src="http://via.placeholder.com/400x400">
+  </div>
+  <div>
     <div class="show_job_name"><%= @job.name %></div>
     <div class="show_job_at"> at <%= @job.company %></div>
   </div>
@@ -9,9 +11,11 @@
 <style>
 .show_job_header {
   display: flex;
-  justify-content: center;
-  width: 100%;
-  border: 1px solid red;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image_wrapper {
   height: 100px;
 }
 

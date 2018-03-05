@@ -1,18 +1,27 @@
 import pell from 'pell'
 
-let editor
+let richEditors = [
+  { id: 'job_description', editor: null },
+  { id: 'company_description', editor: null }
+]
 let form
 
 document.addEventListener('DOMContentLoaded', () => {
   form = document.querySelector('#job_form')
-  editor = pell.init({
-    element: document.getElementById('job_description')
+
+  const initEditor = id => pell.init({
+    element: document.getElementById(id)
   })
+
+  richEditors.forEach(x => x.editor = initEditor(x.id))
 })
 
 window.newFormSubmitted = function(event) {
   event.preventDefault()
-  const hidden = document.getElementById('job_description_hidden')
-  hidden.value = editor.content.innerHTML
+  for (let e in richEditors) {
+    const el = document.getElementById(`${richEditors[e].id}_hidden`)
+    el.value = richEditors[e].editor.content.innerHTML
+  }
+
   form.submit()
 }
