@@ -6,6 +6,7 @@
 body {
   display: flex;
   justify-content: center;
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
 }
 
 .bold {
@@ -15,11 +16,26 @@ body {
 .field {
   display: flex;
   flex-direction: column;
-  margin: 10px;
+  margin: 10px 0;
   width: 100%;
 }
 
 .divider {
   border-bottom: 1px solid silver; 
   margin: 4px 0;
+}
+
+.form > .submit {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form > .submit > input {
+  font-size: 1.05rem;
+  border: none;
+  height: 30px;
+  width: 120px;
+  color: white;
+  background-color: #41b883;
+  cursor: pointer;
 }

@@ -1,6 +1,6 @@
 <%= javascript_pack_tag 'job_new' %>
 
-<%= form_with(model: Job.new, id: 'job_form', class: 'new_job_form') do |form| %>
+<%= form_with(model: Job.new, id: 'job_form', class: 'form new_job_form') do |form| %>
   <div class="field">
     <%= form.label :title %>
     <%= form.text_field :name %>
@@ -27,7 +27,9 @@
     <%= select(:job, :job_type, Job.job_types.collect { |t| [ t[0], t[0] ] }) %>
   </div>
 
-  <%= form.submit :onclick => "newFormSubmitted(event)" %>
+  <div class="submit">
+    <%= form.submit :onclick => "newFormSubmitted(event)" %>
+  </div>
 <% end %>
 
 <style>

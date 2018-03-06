@@ -3,14 +3,6 @@
   width: 100%;
 }
 
-.job_wrapper {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  border: 1px solid silver;
-  border-radius: 3px;
-}
-
 .job_type {
   display: flex;
   justify-content: flex-end;
