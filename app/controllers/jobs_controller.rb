@@ -20,6 +20,10 @@ class JobsController < ApplicationController
     @job = Job.find_by(id: params[:id])
   end
 
+  def edit
+    @job = Job.find_by(id: params[:id])
+  end
+
   private
 
   def job_params

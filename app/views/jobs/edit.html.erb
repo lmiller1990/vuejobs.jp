@@ -1,0 +1,40 @@
+<%= javascript_pack_tag 'job_edit' %>
+
+<%= content_tag :div, id: 'job_data',
+  data: { job: @job } do %><% end %>
+
+<%= form_with(model: @job, id: 'job_form', class: 'form edit_job_form') do |form| %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :company_description %>
+    <div class="divider"></div>
+    <%= content_tag :div, '', id: 'company_description', name: 'job[company_description]' %>
+  </div>
+
+  <div class="underlined field">
+    <%= form.label :job_description %>
+    <div class="divider"></div>
+    <%= content_tag :div, '', id: 'job_description', name: 'job[description]' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :job_type %>
+    <%= select(:job, :job_type, Job.job_types.collect { |t| [ t[0], t[0] ] }) %>
+  </div>
+
+  <div class="submit">
+    <%= form.submit :onclick => "editFormSubmitted(event)" %>
+  </div>
+
+<% end %>
+
+<style>
+.edit_job_form {
+  width: 80%;
+}
+</style>
