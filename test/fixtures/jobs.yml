@@ -1,9 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+frontend_developer:
   name: 'vue developer'
   job_type: 'intern'
   description: '<div>Description</div>'
+  company_description: '<div>Company Description</div>'
 
 two:
   name: 'react developer'

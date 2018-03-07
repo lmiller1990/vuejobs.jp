@@ -24,6 +24,17 @@ class JobsController < ApplicationController
     @job = Job.find_by(id: params[:id])
   end
 
+  def update
+    @job = Job.find_by(id: params[:id])
+    if @job.update_attributes(job_params)
+      redirect_to @job
+    else
+      puts @job.errors.full_messages
+      puts 'error'
+      # error
+    end
+  end
+
   private
 
   def job_params
