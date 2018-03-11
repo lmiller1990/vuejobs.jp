@@ -42,3 +42,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 })
+
+window.richEditors = richEditors
+window.editFormSubmitted = function(event) {
+  event.preventDefault()
+  for (let e in richEditors) {
+    const el = document.getElementById(`${richEditors[e].id}_hidden`)
+    el.value = richEditors[e].editor.content.innerHTML
+  }
+
+  form.submit()
+}
